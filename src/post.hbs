@@ -1,0 +1,34 @@
+{{!< default}}
+
+{{#post}}
+<article slot="content" class="post">
+    <magnon-card header-image="{{feature_image}}" big-header>
+        <div slot="category">
+            <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+            {{#if tags}}
+                <span class="date-divider">/</span> <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
+            {{/if}}
+        </div>
+        <h1 slot="title">{{title}}</h1>
+        {{content}}
+    </magnon-card>
+</article>
+{{/post}}
+
+<section slot="content">
+    <magnon-card expand-content>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = '{{url absolute="true"}}';
+                this.page.identifier = 'ghost-{{id}}';
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </magnon-card>
+</section>

@@ -1,0 +1,7 @@
+{{!< default}}
+
+<div class="post-grid" slot="content">
+    {{#foreach posts}}
+        {{> "post-card" index=@index}}
+    {{/foreach}}
+</div>

@@ -1,0 +1,46 @@
+{
+  "name": "magnon-ghost-theme",
+  "version": "0.1.0",
+  "description": "A ghost theme made for Magnon",
+  "scripts": {
+    "lint": "eslint src",
+    "clean": "rm -rf out/* && rm -f magnon.zip",
+    "build": "npm run clean && mkdir -p out && npm run build:meta && npm run build:hbs && npm run build:css && npm run build:js && npm run build:zip",
+    "build:meta": "cp package.json out/",
+    "build:hbs": "cpx \"./src/**/*.hbs\" ./out/",
+    "build:css": "cpx \"./src/**/*.css\" ./out/",
+    "build:js": "rollup -c",
+    "build:zip": "cd out && zip -r ../magnon.zip *",
+    "watch": "npm run build:meta && rollup -c -w | npm run build:hbs -- -w | npm run build:css -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theMagnon/magnon-ghost-theme.git"
+  },
+  "author": {
+    "name": "Ellie",
+    "email": "ellie@magnon.net"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theMagnon/magnon-ghost-theme/issues"
+  },
+  "homepage": "https://github.com/theMagnon/magnon-ghost-theme#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "cpx": "^1.5.0",
+    "eslint": "^4.1.1",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.0.0"
+  },
+  "dependencies": {
+    "@magnon/components": "^0.5.4"
+  }
+}

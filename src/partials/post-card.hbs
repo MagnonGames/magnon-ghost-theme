@@ -1,0 +1,20 @@
+<article>
+    <magnon-card header-image="{{feature_image}}" {{#unless index}}big-header{{/unless}} href="{{url}}">
+        {{#if tags}}
+            <span slot="category">{{tags.[0].name}}</span>
+        {{/if}}
+        <h2 slot="title">{{title}}</h2>
+
+        <p>{{excerpt words="50"}}...</p>
+
+        <footer slot="footer">
+            {{#if author.profile_image}}
+                <img
+                    class="author-profile-image"
+                    src="{{author.profile_image}}"
+                    alt="{{author.name}}" />
+            {{/if}}
+            <span class="post-card-author">{{author}}</span>
+        </footer>
+    </magnon-card>
+</article>
