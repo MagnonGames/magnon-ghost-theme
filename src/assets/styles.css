@@ -75,7 +75,7 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
     position: relative;
     display: flex;
     width: 100vw;
-    height: 450px;
+    min-height: 300px;
     top: -20px;
     left: calc((100vw - 100%) * -0.5);
     background-color: var(--magnon-black);
@@ -90,14 +90,19 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
     width: 40vw;
     max-width: 800px;
     min-width: 300px;
-    margin: auto;
+    margin: 20px 0;
     text-align: center;
     color: white;
 }
 
 .author-header .author-profile-image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+}
+
+.author-header h2 {
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 .author-header .meta-text {
