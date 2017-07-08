@@ -1,32 +1,34 @@
 {{!< default}}
 
 {{#author}}
-<header slot="content" class="author-header" {{#if cover_image}}style="background-image: url({{cover_image}})"{{/if}}>
-    <div class="author-header-container">
-        {{#if profile_image}}
-            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-        {{/if}}
-        <h1 class="site-title">{{name}}</h1>
-        {{#if bio}}
-            <h2 class="author-bio">{{bio}}</h2>
-        {{/if}}
-        <div class="author-meta">
-            {{#if location}}
-                <div class="meta-text">{{location}}</div>
+<{{#if cover_image}}div{{else}}magnon-star-container{{/if}} slot="content" class="page-header" {{#if cover_image}}style="background-image: url({{cover_image}})"{{/if}}>
+    <div class="flex-center">
+        <div class="header-container">
+            {{#if profile_image}}
+                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
-            <div class="meta-text">
-                {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+            <h1 class="site-title">{{name}}</h1>
+            {{#if bio}}
+                <h2 class="author-bio">{{bio}}</h2>
+            {{/if}}
+            <div class="author-meta">
+                {{#if location}}
+                    <div class="meta-text">{{location}}</div>
+                {{/if}}
+                <div class="meta-text">
+                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                </div>
+                {{#if website}}
+                    <a href="{{website}}" class="meta-text">{{website}}</a>
+                {{/if}}
+                {{#if twitter}}
+                    <magnon-twitter-button user="{{twitter_url}}"></magnon-twitter-button>
+                {{/if}}
+                <magnon-feedly-button user="{{name}}" id="{{url absolute="true"}}"></magnon-feedly-button>
             </div>
-            {{#if website}}
-                <a href="{{website}}" class="meta-text">{{website}}</a>
-            {{/if}}
-            {{#if twitter}}
-                <magnon-twitter-button user="{{twitter_url}}"></magnon-twitter-button>
-            {{/if}}
-            <magnon-feedly-button user="{{name}}" id="{{url absolute="true"}}"></magnon-feedly-button>
         </div>
     </div>
-</header>
+</{{#if cover_image}}div{{else}}magnon-star-container{{/if}}>
 {{/author}}
 
 <div class="post-grid" slot="content" slot="content">

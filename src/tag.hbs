@@ -1,0 +1,24 @@
+{{!< default}}
+
+{{#tag}}
+<{{#if cover_image}}div{{else}}magnon-star-container{{/if}} slot="content" class="page-header" {{#if cover_image}}style="background-image: url({{cover_image}})"{{/if}}>
+    <div class="flex-center">
+        <div class="header-container">
+            <h1 class="site-title">{{name}}</h1>
+            <h2 class="site-description">
+                {{#if description}}
+                    {{description}}
+                {{else}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/if}}
+            </h2>
+        </div>
+    </div>
+</{{#if cover_image}}div{{else}}magnon-star-container{{/if}}>
+{{/tag}}
+
+<div class="post-grid" slot="content">
+    {{#foreach posts}}
+        {{> "post-card" index=@index}}
+    {{/foreach}}
+</div>
