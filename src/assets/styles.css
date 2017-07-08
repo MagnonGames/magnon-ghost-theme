@@ -59,6 +59,23 @@ html {
     color: white !important;
 }
 
+.pagination {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pagination > * {
+    margin: 10px 0;
+    display: block;
+}
+
+@media (min-width: 580px) {
+    .pagination > * {
+        margin: 0 20px;
+        display: inline-block;
+    }
+}
+
 /* POST PAGE */
 
 article.post, .post-section {
