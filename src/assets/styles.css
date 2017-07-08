@@ -23,6 +23,15 @@ html {
 
 /* FRONT PAGE */
 
+.home.page-header {
+    background-color: transparent;
+    --magnon-social-icon-button-color: initial;
+}
+
+.home .header-container {
+    color: var(--magnon-black);
+}
+
 .author-profile-image {
     box-shadow: var(--magnon-shadow-1);
     border-radius: 50%;
@@ -75,6 +84,7 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
     position: relative;
     width: 100vw;
     min-height: 300px;
+    height: 0px;
     top: -20px;
     left: calc((100vw - 100%) * -0.5);
     background-color: var(--magnon-black);
