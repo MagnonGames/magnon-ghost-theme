@@ -84,7 +84,6 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
     position: relative;
     width: 100vw;
     min-height: 300px;
-    height: 0px;
     top: -20px;
     left: calc((100vw - 100%) * -0.5);
     background-color: var(--magnon-black);
@@ -96,6 +95,7 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
 .flex-center {
     width: 100%;
     height: 100%;
+    min-height: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,6 +113,7 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
 .page-header .author-profile-image {
     width: 100px;
     height: 100px;
+    margin: 0;
 }
 
 .page-header h2 {
