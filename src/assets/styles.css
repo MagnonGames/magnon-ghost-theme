@@ -16,6 +16,10 @@ html {
     flex: 1 1 100%;
 }
 
+.post-grid > article > magnon-card {
+    flex-grow: 1;
+}
+
 @media (min-width: 580px) {
     .post-grid > article {
         margin: 0 30px;
