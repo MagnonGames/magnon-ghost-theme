@@ -7,6 +7,7 @@
 
         <p>{{excerpt words="50"}}...</p>
 
+        {{#unless skip_author}}
         <footer slot="footer">
             {{#if author.profile_image}}
                 <img
@@ -16,5 +17,6 @@
             {{/if}}
             <span class="post-card-author">{{author}}</span>
         </footer>
+        {{/unless}}
     </magnon-card>
 </article>

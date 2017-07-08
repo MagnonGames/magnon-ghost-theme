@@ -13,9 +13,53 @@
         {{content}}
     </magnon-card>
 </article>
+
+<section slot="content" class="post-meta-info post-section">
+    {{#author}}
+    <div>
+        <magnon-card href="{{url}}" center-content class="author-meta">
+            {{#if profile_image}}
+                <img slot="title" class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+            {{/if}}
+            <h4 slot="title">{{name}}</h4>
+            {{#if bio}}
+                <span>{{bio}}</span>
+            {{/if}}
+        </magnon-card>
+    </div>
+    {{/author}}
+
+    {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3"}}
+    <div>
+        <magnon-card center-content header-image="{{../tags.[0].feature_image}}" class="tag-more">
+            <h4 slot="title">More in {{../tags.[0].name}}</h4>
+            <div class="tag-more-links">
+                <ul>
+                    {{#foreach posts}}
+                    <li><a href="{{url}}">{{title}}</a></li>
+                    {{/foreach}}
+                </ul>
+            </div>
+            <span slot="footer">
+                <a href="{{@blog.url}}/tag/{{../tags.[0].slug}}/">
+                    {{plural meta.pagination.total empty="No posts" singular="% post" plural="See all % posts"}}
+                </a>
+            </span>
+        </magnon-card>
+    </div>
+    {{/get}}
+
+    {{#next_post}}
+        {{> "post-card" index=1 skip_author=true}}
+    {{/next_post}}
+
+    {{#prev_post}}
+        {{> "post-card" index=1 skip_author=true}}
+    {{/prev_post}}
+</section>
 {{/post}}
 
-<section slot="content" class="post-comments">
+<section slot="content" class="post-section">
     <magnon-card expand-content>
         <div id="disqus_thread"></div>
         <script>

@@ -47,7 +47,7 @@ html {
 
 /* POST PAGE */
 
-article.post, .post-comments {
+article.post, .post-section {
     max-width: 1000px;
     margin: auto;
 }
@@ -113,4 +113,37 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
 .page-header .meta-text {
     display: inline-block;
     margin-right: 30px;
+}
+
+.post-meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: calc(100% + 60px);
+    max-width: 1060px;
+    margin: 0 -30px;
+}
+
+.post-meta-info > * {
+    flex: 1 1 300px;
+    margin: 0 30px;
+}
+
+.post-meta-info .author-meta .author-profile-image {
+    width: 75px;
+    height: 75px;
+}
+
+.post-meta-info h4 {
+    display: inline-block;
+    font-size: 25px;
+}
+
+.tag-more-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tag-more-links li {
+    padding: 10px 0;
 }
