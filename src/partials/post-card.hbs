@@ -1,5 +1,5 @@
 <article>
-    <magnon-card header-image="{{feature_image}}" {{#unless index}}big-header{{/unless}} href="{{url}}">
+    <magnon-card href="{{url}}" header-image="{{feature_image}}" {{#unless index}}big-header{{/unless}}>
         {{#if tags}}
             <span slot="category">{{tags.[0].name}}</span>
         {{/if}}
