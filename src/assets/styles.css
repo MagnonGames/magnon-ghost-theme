@@ -47,7 +47,7 @@ html {
 
 /* POST PAGE */
 
-article.post {
+article.post, .post-comments {
     max-width: 1000px;
     margin: auto;
 }
