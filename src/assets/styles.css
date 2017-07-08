@@ -9,6 +9,7 @@ html {
 
 .post-grid > article {
     flex: 1 1 500px;
+    display: flex;
 }
 
 .post-grid > article:first-of-type {
@@ -138,6 +139,11 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
 .post-meta-info > * {
     flex: 1 1 300px;
     margin: 0 30px;
+    display: flex;
+}
+
+.post-meta-info > * > magnon-card {
+    flex-grow: 1;
 }
 
 .post-meta-info .author-meta .author-profile-image {
