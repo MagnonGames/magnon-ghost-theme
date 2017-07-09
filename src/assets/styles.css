@@ -2,6 +2,11 @@ html {
     --magnon-highlight-color: var(--magnon-dark-teal) !important;
 }
 
+body {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
 .post-grid {
     display: flex;
     flex-wrap: wrap;

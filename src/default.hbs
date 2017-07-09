@@ -7,6 +7,35 @@
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <script>
+            var loadMainScript = function() {
+                var mainScript = document.createElement("script");
+                mainScript.src = "{{asset "main.js"}}";
+                function startLoading() {
+                    mainScript.onload = function() {
+                        document.body.style.opacity = 1;
+                    };
+                    document.head.appendChild(mainScript);
+                }
+
+                if (document.readyState !== "loading") startLoading();
+                else document.addEventListener("DOMContentLoaded", startLoading);
+            };
+
+            var supportsSD = "attachShadow" in Element.prototype && "getRootNode" in Element.prototype;
+            const supportsCE = window.customElements;
+
+            if (!supportsSD || !supportsCE) {
+                var polyfillScript = document.createElement("script");
+                polyfillScript.src = "https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.1/webcomponents-sd-ce.js";
+                polyfillScript.onload = function() {
+                    console.log("Loaded SD and CE polyfills");
+                    loadMainScript();
+                }
+                document.head.appendChild(polyfillScript);
+            } else loadMainScript();
+        </script>
+
         <link rel="stylesheet" href="{{asset "styles.css"}}">
 
         {{ghost_head}}
@@ -59,7 +88,5 @@
         {{/if}}
 
         {{ghost_foot}}
-
-        <script src="{{asset "main.js"}}"></script>
     </body>
 </html>
