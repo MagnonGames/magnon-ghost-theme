@@ -153,22 +153,21 @@ article.post h2, article.post h3, article.post h4, article.post h5, article.post
     margin-right: 30px;
 }
 
-.post-meta-info {
+.post-meta-info > .meta-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: calc(100% + 60px);
-    max-width: 1060px;
     margin: 0 -30px;
 }
 
-.post-meta-info > * {
+.post-meta-info > .meta-container > * {
     flex: 1 1 300px;
     margin: 0 30px;
     display: flex;
 }
 
-.post-meta-info > * > magnon-card {
+.post-meta-info > .meta-container > * > magnon-card {
     flex-grow: 1;
 }
 
