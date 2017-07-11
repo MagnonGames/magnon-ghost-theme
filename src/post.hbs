@@ -6,7 +6,7 @@
         <div slot="category">
             <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
             {{#if tags}}
-                <span class="date-divider">/</span> <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
+                <span class="date-divider">/</span> <a href="/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
             {{/if}}
         </div>
         <h1 slot="title">{{title}}</h1>
@@ -42,7 +42,7 @@
                     </ul>
                 </div>
                 <span slot="footer">
-                    <a href="{{@blog.url}}/tag/{{../tags.[0].slug}}/">
+                    <a href="/tag/{{../tags.[0].slug}}/">
                         {{plural meta.pagination.total empty="No posts" singular="% post" plural="See all % posts"}}
                     </a>
                 </span>
