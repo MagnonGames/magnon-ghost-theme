@@ -43,6 +43,6 @@
     "rollup-watch": "^4.0.0"
   },
   "dependencies": {
-    "@magnon/components": "^0.6.0"
+    "@magnon/components": "^0.6.1"
   }
 }
